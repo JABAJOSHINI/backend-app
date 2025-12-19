@@ -1,0 +1,22 @@
+package com.marine.customerservice.Entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class PasswordResetTokenEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String token;
+    @OneToOne
+    private UserInfoEntity user;
+    private LocalDateTime expiryDate;
+}

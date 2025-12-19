@@ -1,0 +1,103 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <title>Customer Enquiry Mail</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<p>You have a message from KAUFERKART</p>-->
+<!--<hr>-->
+<!--<h2 th:text="'Hi Team,'"></h2>-->
+<!--<p><Strong>Customer Name: </Strong> <p th:text="${name}"></p> </p>-->
+<!--<p><Strong>Email:</Strong>  <p th:text="${email}"></p> </p>-->
+<!--<p><Strong>Phone:</Strong>  <p th:text="'+' + ${phone}"></p> </p>-->
+<!--<p><Strong>Message: </Strong></p>-->
+<!--<p><p th:text="${message}"></p> </p>-->
+<!--<p>Regards, <br/> KauferKart Team</p>-->
+<!--</body>-->
+<!--</html></html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Customer Enquiry Mail</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #444;
+    }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    .info-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .label {
+      font-weight: bold;
+      width: 150px;
+      color: #555;
+    }
+    .message-box {
+      margin-top: 15px;
+      padding: 12px;
+      background: #f4f6f9;
+      border-left: 4px solid #0073e6;
+      border-radius: 5px;
+    }
+    .footer {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Hi Team,</h2>
+  <p>You have a new enquiry from <strong>KAUFERKART</strong></p>
+  <hr/>
+  <table class="info-table">
+    <tr>
+      <td class="label">Customer Name:</td>
+      <td th:text="${name}"><p th:text="${name}"></p></td>
+    </tr>
+    <tr>
+      <td class="label">Email:</td>
+      <td th:text="${email}"><p th:text="${email}"></p></td>
+    </tr>
+    <tr>
+      <td class="label">Phone:</td>
+      <td th:text="'+' + ${phone}"><p th:text="${phone}"></p></td>
+    </tr>
+  </table>
+
+  <div class="message-box">
+    <strong>Message:</strong>
+    <p th:text="${message}"
+       >
+    </p>
+  </div>
+
+  <p class="footer">
+    Regards,<br/>
+    <strong>KauferKart Team</strong>
+  </p>
+</div>
+</body>
+</html>
