@@ -1,0 +1,14 @@
+# Use lightweight Java image
+FROM openjdk:17-jdk-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy the built jar
+COPY target/*.jar app.jar
+
+# Expose gateway port (change if needed)
+EXPOSE 8080
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]
